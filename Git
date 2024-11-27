@@ -1,0 +1,109 @@
+1)	Installing GIT package
+a.	Sudo yum install git
+2)	Configuration Git
+a.	git config -l
+b.	git config - - global user.name “palani”
+c.	git config - - global user.email “palani.gmail.com”
+d.	git config - - system core.editor vim
+3)	you can edit the files directly
+a.	/etc/gitconfig which corresponds to - -  system
+b.	~/. Gitconfig or ~/.config/git/config which corresponds to - - global
+c.	. git/config in a repository which corresponds to - - local
+4)	To create a repository there are two ways
+a.	First way -> git init <repo-directory>
+i.	Eg : git init folder1
+b.	Second way -> Create a directory, go inside the directory, type the command git init
+i.	Eg: mkdir folder1, cd folder1, git init
+5)	Find status
+a.	git status
+6)	To track files
+a.	git add <file_name>
+b.	git add . ( To add many files )
+7)	To list files which we are tracking 
+a.	git ls-files
+8)	To untrack files
+a.	git restore - - staged <file_name>
+b.	git restore –staged <file_name>    ( this is to unstage )
+9)	Checkout ( To discard changes in working directory )
+a.	git checkout   - - <file-name>
+10)	To rename a file
+a.	git mv file1.txt file2.txt
+b.	git add -A
+c.	git add -u ( when you don’t want to add some files ) 
+11)	To delete files
+a.	git rm <file-name>
+12)	To commit a file
+a.	git commit -m “Adding start text file “
+b.	git commit -am “Adding and commiting at same time” ( Adding and committing at the same time you have to use the option -am )
+13)	To push changes
+a.	git push origin master
+14)	  Pull files
+a.	git pull origin master
+
+15)	To rebase a master branch below are the steps
+a.	git checkout branch2 (this will make the pointer to be placed in branch2)
+b.	git rebase master ( you are rebasing master that means for example some developer made some commit changes to the master and you want to include those changes to your branch)
+c.	The branch branch2 when you created from master does not include those changes
+
+16)	To ignore the file
+a.	Create a file called .gitignore
+i.	Eg : vim .gitignore, inside the file, *.jpg, to ignore a folder temp
+
+ 
+
+
+
+17)	Clone a repository
+a.	git clone repo1 repo2
+18)	logging
+a.	git log - - oneline
+b.	git log - - <filename>
+c.	git log - - oneline <filename>
+d.	git log - - abbrev-commit
+e.	git log - - oneline - - graph - - decorate
+19)	branching
+a.	git branch <branch name> ( to create new branch ) 
+
+20)	Tagging
+a.	git tag <tag_name>
+b.	git tag -a <tag_name>
+c.	git tag - - list
+d.	git tag -a <tag_name> <particular_commit_id>
+e.	git tag -a <tag_name> -f <correct_commit_id> ( updating the tag to correct commit id )
+f.	git push origin <tag_name>
+g.	git push origin master –tags ( to push all the tags at the same time ) 
+h.	git push origin :<tag-name> ( to delete a tag in the git hub)
+21)	
+a.	git checkout <branch name> ( to go inside branch use below command ) ( the pointer will be in this branch now )
+b.	git branch -a ( to list all branches ) 
+c.	git branch -m <old_branch_name> <new_branch_name> ( rename a branch )
+d.	git branch -d <branch-name> ( to delete a branch )
+e.	git checkout -b branch1 ( it will create a branch name called branch1 and checkout to this branch1 that means the pointer will be in the branch1 branch )
+
+
+22)	To delete a branch
+a.	Git branch -d <branch name>
+23)	Merging
+a.	Go inside master branch and put the command 
+b.	Git merge <branch>
+24)	Commands
+a.	Git clone https://github.com/palseums/python.git
+25)	Git alias
+a.	git log - -  all - - graph - - decorate - - oneline ( as it is a long command )
+b.	Once you set the below command
+c.	Git config - - global alias.hist “log - -  all - - graph - - decorate - - oneline” 
+d.	You can shortly type this command as git hist
+e.	Alias are stored in the below location
+f.	Your user directory ~/.gitconfig
+
+
+26)	Specific branch
+git clone - - branch <branch_name> - -single-branch https_URL
+
+27)	Change password
+git config --global --unset user.password
+		git push origin master
+
+
+
+
